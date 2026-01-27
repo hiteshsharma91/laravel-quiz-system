@@ -71,6 +71,9 @@ class AdminController extends Controller
 
     // add new category 
     function addCategory(Request $request){
+        $validation= $request->validate([
+            "Category"=>"required | min:3 | unique:categories,name"
+        ]);
         $admin = Session::get('admin');
         $category= new Category();
         $category->name=$request->Category;
@@ -78,8 +81,19 @@ class AdminController extends Controller
         
         if($category->save()){
             Session::flash('category','Category: '. $request->Category. " Added succsessfully!!");
+            return redirect('admin-categories');
         }
-        return redirect('admin-categories');
+    }
+
+    // Delet category form list
+    function deleteCategory( $id){
+        $isDeleted= Category::find($id)->delete(); 
+        
+        if($isDeleted){
+            Session::flash('category','Category: Deleted succsessfully!!');
+            return redirect('admin-categories');
+        }
+        
     }
 
 }
