@@ -18,3 +18,7 @@ Route::post('add-category',[AdminController::class,'addCategory']);
 Route::get('category/delete/{id}',[AdminController::class,'deleteCategory']);
 // quizz routes
 Route::get('add-quiz',[AdminController::class,'addQuiz']);
+Route::get('add-quiz-reset',[AdminController::class,'resetQuiz']);
+
+// MCQs routes
+Route::post('add-mcq',[AdminController::class,'addMCQs']);
