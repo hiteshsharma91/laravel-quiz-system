@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <meta charset="UTF-8">
     <title>Admin Categories page</title>
     @vite('resources/css/app.css')
 </head>
 <body> 
     <x-navbar name="{{$name}}"></x-navbar>
 
-    <!-- session message -->
     @if(session('category'))
     <div class=' bg-green-800 text-white pl-5'>{{session('category')}}</div>
     @endif
@@ -16,26 +16,21 @@
         <div class=' bg-white p-8 rounded-2xl shadow-lg w-full max-w-sm'>
            <h2 class=" text-2xl text-center text-gray-800 mb-6">Add Category</h2>
 
-           <!-- admin category form -->
            <form action="add-category" method="post" class=" space-y-4">
                @csrf 
                <div>
    
-                   <!-- admin category input field   -->
                    <input type="text" name="Category" placeholder="Enter Category name"
                    class=" w-full px-4 py-2 border border-gray-300 rounded-xl focus:outline-none">
 
-                   <!-- add validation  -->
                    @error('Category')
                    <div class="text-red-500">{{$message}}</div>
                    @enderror
                </div>
    
-               <!-- category button -->
                <button type="submit" class="w-full px-4 py-2 text-white bg-green-400 rounded-xl cursor-pointer">Add</button>
-           </form>
+            </form>
 
-           <!-- display all categories list  -->
        </div>
        <div class="w-200 shadow-lg">
            <h1 class="text-2xl text-orange-500">Category List</h1>
