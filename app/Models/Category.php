@@ -8,4 +8,8 @@ class Category extends Model
 {
     //
     protected $table = "categories";
+
+    function quizzes(){
+        return $this->hasMany(Quiz::class);
+    }
 }

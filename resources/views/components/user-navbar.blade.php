@@ -5,7 +5,7 @@
         </div>
         <div class=" space-x-4">
 
-            <a href="dashboard" class="text-green-900 hover:text-orange-500 cursor-pointer">Home</a>
+            <a href="/" class="text-green-900 hover:text-orange-500 cursor-pointer">Home</a>
             <a href="admin-categories" class="text-green-900 hover:text-orange-500 cursor-pointer">Categories</a>
             <a href="" class="text-green-900 hover:text-orange-500 cursor-pointer">Login</a>
             <a href="/admin-logout" class="text-green-900 hover:text-orange-500 cursor-pointer">Blog</a>
