@@ -8,8 +8,12 @@ use App\Http\Controllers\UserController;
 //     return view('welcome');
 // });
 
+//user routes
 Route::get('/',[UserController::class,'welcome']);
 Route::get('user-quiz-list/{id}/{category}',[UserController::class,'userQuizList']);
+Route::get('start-quiz/{id}/{name}',[UserController::class,'startQuiz']);
+Route::view('user-signup','user-signup');
+Route::post('user-signup',[UserController::class,'userSignup']);
 
 // admin routes 
 Route::view('admin-login','admin-login');

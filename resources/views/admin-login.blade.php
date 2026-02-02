@@ -5,6 +5,7 @@
     <title>Admin login</title>
     @vite('resources/css/app.css')
 </head>
+
 <body class=' bg-gray-400 flex items-center justify-center min-h-screen' >
     <div class=' bg-white p-8 rounded-2xl shadow-lg w-full max-w-sm'>
         <h2 class=" text-2xl text-center text-gray-800 mb-6">Admin login</h2>

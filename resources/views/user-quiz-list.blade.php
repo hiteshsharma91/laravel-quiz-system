@@ -19,6 +19,7 @@
             <li class="flex justify-between text-white">
                 <span class="w-1/4">Quiz Id</span>
                 <span class="w-3/4">Name</span>
+                <span class="w-3/4">Questions</span>
                 <span class="w-3/4">Action</span>
             </li>
         </ul>
@@ -28,8 +29,9 @@
             <li class="flex justify-between">
                 <span class="w-1/4">{{ $item->id }}</span>
                 <span class="w-3/4">{{ $item->name }}</span>
+                <span class="w-3/4">{{ $item->mcq_count }}</span>
                 <span class="w-3/4 text-green-600 font-bold ">
-                    <a href="">Attempt Questions</a>
+                    <a href="/start-quiz/{{$item->id}}/{{$item->name}}">Attempt Questions</a>
                 </span>
             </li>
         </ul>

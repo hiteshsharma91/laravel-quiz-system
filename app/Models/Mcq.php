@@ -8,4 +8,8 @@ class Mcq extends Model
 {
     //
     protected $table = "mcqs";
+
+    function Quiz(){
+        return $this->belongsTo(Quiz::class);
+    }
 }
