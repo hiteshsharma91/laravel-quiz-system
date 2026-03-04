@@ -7,8 +7,13 @@
 
             <a href="/" class="text-green-900 hover:text-orange-500 cursor-pointer">Home</a>
             <a href="admin-categories" class="text-green-900 hover:text-orange-500 cursor-pointer">Categories</a>
-            <a href="" class="text-green-900 hover:text-orange-500 cursor-pointer">LogIn</a>
+            @if(session('user'))
+            <a href="" class="text-green-900 hover:text-orange-500 cursor-pointer">Welcome, {{session('user')->name}}</a>
+            <a href="/user-logout" class="text-green-900 hover:text-orange-500 cursor-pointer">LogOut</a>
+            @else
+            <a href="user-login" class="text-green-900 hover:text-orange-500 cursor-pointer">LogIn</a>
             <a href="/user-signup" class="text-green-900 hover:text-orange-500 cursor-pointer">SignUp</a>
+            @endif
             <a href="/admin-logout" class="text-green-900 hover:text-orange-500 cursor-pointer">Blog</a>
         </div>
 

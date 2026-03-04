@@ -18,14 +18,33 @@
         <h3 class="text-3xl font-bold text-center text-green-800 mb-6">
         Good Luck!!
         </h3>
-        <div class="flex justify-center mt-6">
-        <a
-            type="submit"
-            href="/user-signup"
-            class="px-4 py-2 text-white bg-blue-600 rounded-md cursor-pointer">
-            Login/SignUp for start Quiz
-        </a>
-         </div>
+
+        @if(session('user'))
+        <div class="flex justify-center">
+            <a 
+                type="submit"
+                href="/mcq/{{session('firstMCQ')->id.'/'.$quizName}}"
+                class="px-4 py-2 text-white mt-6 bg-blue-600 rounded-md cursor-pointer">
+                start Quiz
+            </a>
+        </div>
+        @else
+        <div class="flex justify-center space-x-1">
+            <a 
+                type="submit"
+                href="/user-signup-quiz"
+               class="px-4 py-2 text-white mt-6 bg-blue-600 rounded-md cursor-pointer">
+                SignUp for start Quiz
+            </a>
+            <a 
+                type="submit"
+                href="/user-login-quiz"
+               class="px-4 py-2 text-white mt-6 bg-blue-600 rounded-md cursor-pointer">
+                Login for start Quiz
+            </a>
+        </div>
+        @endif 
+         
 
     </div>
 </body>
